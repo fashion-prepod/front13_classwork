@@ -138,10 +138,13 @@
 
 // const arr = [];
 
-// for (let i = 0; arr.length !== 8; i++) {
+// for (let elementValue = 0; arr.length !== 8; elementValue++) {
 //   if (i % 2 !== 0) {
-//     arr[arr.length] = i;
+//     arr[arr.length] = elementValue;
 //   }
 // }
+
+// let a = 'za';
+// let b = 'ika';
 
 // console.log(arr);

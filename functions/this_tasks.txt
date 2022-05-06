@@ -26,6 +26,7 @@ const fbPlayers = [
 в качестве коллбэка передайте метод .sayHello() каждого 
 футболиста (используйте .forEach())
 
+presentation(fbPlayers[0].sayHello)
 
 3. const dog = {
     name: 'Bobik',

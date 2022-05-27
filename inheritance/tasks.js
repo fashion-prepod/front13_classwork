@@ -1,5 +1,10 @@
-// Создать класс Battery, который инициализирует поля type, energy (заряд, по умолчанию 100). Создать класс Device,
-// который принимает параметр batteryType и метод insertBattery, который принимает два параметра (две батарейки). Создать класс Gamepad, который наследует от Device. Класс Gamepad должен содержать поле model, поле isConnected (boolean) и методы connectTo(), который принимает название другого девайса и выводит сообщение типа “gamepadModel connected to TV”, метод disconnect(), который отключает Gamepad и метод play(), который отнимает 10 зарядов от каждой батареи. Если хотя бы одно поле batteryType у Device и type у Battery не совпадают, то вывести сообщение что батарейки не вставлены.
+// Создать класс Battery, который инициализирует поля type,
+//  energy (заряд, по умолчанию 100). Создать класс Device,
+// который принимает параметр batteryType и метод insertBattery,
+//  который принимает два параметра (две батарейки).
+//  Создать класс Gamepad, который наследует от Device.
+// Класс Gamepad должен содержать поле model, поле isConnected (boolean)
+//  и методы connectTo(), который принимает название другого девайса и выводит сообщение типа “gamepadModel connected to TV”, метод disconnect(), который отключает Gamepad и метод play(), который отнимает 10 зарядов от каждой батареи. Если хотя бы одно поле batteryType у Device и type у Battery не совпадают, то вывести сообщение что батарейки не вставлены.
 
 const BATTERY_TYPE = {
   AAA: "AAA",
@@ -10,12 +15,24 @@ const BATTERY_TYPE = {
 class BatteryTypeError extends Error {}
 
 class Battery {
-  energy = 100; // get 0
+  #energy = 100; // get 0
 
   static charge(battery) {
     if (battery instanceof Battery) {
       battery.energy = 100;
       return battery;
+    }
+  }
+
+  get energy() {
+    return this.#energy;
+  }
+
+  set energy(val) {
+    if (val > 0 && val < 100) {
+      this.#energy = val;
+    } else {
+      throw new Error(`battery energy should be between 0 and 100; got ${val}`);
     }
   }
 
@@ -91,7 +108,7 @@ class Device {
 
   unchargeBatteries(amount) {
     this.batteries.forEach((battery) => {
-      battery.energy = battery.energy >= amount ? battery.energy - amount : 0;
+      battery.energy = amount;
     });
   }
 }

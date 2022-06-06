@@ -61,3 +61,55 @@
 // lisArr.forEach(li => li.addEventListener('click', clickHandler ))
 
 // EVENT DELEGATION
+
+
+// window.addEventListener('keydown', (e) => {
+//     console.log(e);
+// });
+
+// const ul = document.getElementsByClassName('smth')[0];
+
+// ul.addEventListener('click', ({target: {nodeName, textContent}}) => {
+//     if (nodeName === 'LI') {
+//         console.log(textContent);
+//     }
+// });
+
+// Create Delete Change
+
+// const ul = document.getElementsByClassName('smth')[0];
+// let lis = ul.querySelectorAll('li');
+// console.dir(document.body);
+
+// ul.addEventListener('click', ({target}) => {
+//     if (target.nodeName === 'LI') {
+//         const currentText = target.textContent.split(' ');
+//         currentText[1] = +currentText[1] + 1;
+//         target.textContent = currentText.join(' ');
+//         // target.removeAttribute('type');
+//         // target.setAttribute('type', 'sqaure');
+        // target.remove();
+//         // lis = null; // [li, li, li, li]
+//         // lis[1] = null;
+//     }
+// });
+
+// Create
+
+// const ul = document.getElementsByClassName('smth')[0];
+// console.dir(ul)
+
+// ul.addEventListener('click', () => {
+//     const elem = document.createElement('li');
+//     elem.textContent = 'Hello!';
+//     elem.setAttribute('type', 'circle');
+//     console.dir(elem)
+    // ul.insertBefore(elem, null)
+    // ul.insertAdjacentElement('afterbegin', elem)
+// })
+
+// const img = document.createElement('img');
+
+// img.src = 'asdasdasdasdasd';
+
+
